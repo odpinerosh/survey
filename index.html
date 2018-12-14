@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FCC: Survey Form</title>
+</head>
+<body>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Muli');
+
+		html, body {
+			background-color: #4abdac;
+			font-family: 'Muli', sans-serif;
+			min-width: 320px;
+		}	
+
+		ul {
+			list-style: none;
+			padding-left: 0;
+		}
+
+		li {
+			padding-bottom: 3px;
+			margin-left: 8px;
+		}
+
+		#description {
+			text-align: center;
+		}
+
+		#tittle {
+			font-size: 2em;
+			text-align: center;
+		}
+
+		#formFrame {
+		 width: 75%;
+		 margin: auto;
+		 background-color: #fff;
+		 border-radius: 5px;
+		}
+
+		#description {
+			padding-top: 30px;
+		}
+
+		#survey-form {
+			display: grid;
+			grid-template-rows: repeat(17, auto);
+			justify-items: left;
+			margin-left: 3vw;
+		}
+
+		#dropdown, #dropLikeMost, .input-field, .txtArea {
+			width: 85%;
+			border: 1px solid #4abdac;
+			border-radius: 3px;
+			height: 3.5vh;
+			margin-left: 10px;
+		}
+
+		#submit {
+			background: #07889b;
+			border: 1px solid #66b98f;
+			color: #fff;
+			width: 90px;
+		    height: 38px;
+		    font-size: 1.2em;
+		    border-radius: 6px;
+			margin: 15px auto;
+		}
+
+		.txtArea {
+			height: 12vh;
+			margin-top: 5px;
+		}
+
+		.labels {
+			margin: 2vh 0 1vh 0;
+			justify-content: left;
+		}
+
+		@media screen and (min-width: 375px) {
+			#formFrame {
+		 		width: 60%;
+		 	}
+
+		 	.form {
+		 		max-width: 90%;
+		 	}
+
+			#survey-form {
+				margin: auto;
+				max-width: 90%;
+				grid-template-rows: repeat(9, auto);
+				grid-template-columns: 50% 50%;
+				grid-template-areas: "a b"
+									 "c d"
+									 "e f"
+									 "g h"
+									 "i j"
+									 "k l"
+									 "m n"
+									 "o p"
+									 "q q";
+				grid-column-gap: 20px;
+				align-items: center;
+			}
+
+
+			.labels {
+				justify-self: right;
+			}
+
+			.input-field, .col2 {
+				justify-self: left;
+			}
+
+			#submit {
+				grid-area: q;
+			}
+		}
+
+	</style>
+
+	<header id="header">
+		<h1 id="tittle">Survey Form</h1>
+	</header>
+
+	<div id="formFrame">
+		<p id="description">¿Qué podemos hacer mejor en FCC?</p>
+		
+		<div class="form">
+			<form action="" id="survey-form">
+				<label class="labels" id="name-label" for="name">* Nombre: </label>
+				<input class="input-field col2" type="text" placeholder="Su nombre" id="name" required>
+				<label class="labels" id="email-label" for="mail">* Correo electrónico: </label>
+				<input class="input-field col2" type="email" placeholder="Su correo electrónico" id="mail" required>
+				<label class="labels" id="number-label" for="number">* Edad: </label>
+				<input class="input-field col2" type="number" placeholder="Su edad" id="number" min="15" max="120" required>
+				<label class="labels" for="dropdown" id="lblCurRole">¿Cuál es su rol actual?</label>
+				<select name="currRole" id="dropdown" class="input-field col2">
+					<option value disabled selected>Seleccione una opción</option>
+					<option value="estudiante">Estudiante</option>
+					<option value="empleado">Empleado</option>
+					<option value="aprendiz">Aprendiz</option>
+					<option value="reservado">Me lo reservo</option>
+					<option value="otro">Otro</option>
+				</select>
+				<label class="labels" for="recommend">¿Recomendaría FCC a un amigo?</label> 
+  				<ul class="col2">
+  					<li><input class="input-group" value="1" type="radio" name="recommend">Definitivamente</li>
+  					<li><input class="input-group" value="2" type="radio" name="recommend">Tal vez</li>
+  					<li><input class="input-group" value="3" type="radio" name="recommend">No estoy seguro</li>
+  				</ul>
+	  			 
+	  			<label class="labels" for="dropLikeMost" id="lblLikeMost">¿Qué es lo que más le gusta de FCC?</label>
+				<select name="likeMost" id="dropLikeMost" class="col2">
+					<option value disabled selected>Seleccione una opción</option>
+					<option value="challenges">Retos</option>
+					<option value="projects">Proyectos</option>
+					<option value="community">Comunidad</option>
+					<option value="openSource">Código abierto</option>
+					<option value="otro">Otro</option>
+				</select> 
+
+				<label class="labels" for="toChange">Cosas que FCC debería cambiar en el futuro<br>(Marque todas las que considere)</label> 
+				<ul class="col2">
+	  				<li><input class="input-group" value="1" type="checkbox" name="toChange">Proyectos Front-End</li>
+	  				<li><input class="input-group" value="2" type="checkbox" name="toChange">Proyectos Back-End</li>
+	  				<li><input class="input-group" value="3" type="checkbox" name="toChange">Visualización de datos</li>
+	  				<li><input class="input-group" value="4" type="checkbox" name="toChange">Retos</li>
+	  				<li><input class="input-group" value="5" type="checkbox" name="toChange">Comunidad Open Source</li>
+	  				<li><input class="input-group" value="6" type="checkbox" name="toChange">Sistema de ayuda</li>
+	  				<li><input class="input-group" value="7" type="checkbox" name="toChange">Vídeos</li>
+	  				<li><input class="input-group" value="8" type="checkbox" name="toChange">Meetups en la ciudad</li>
+	  				<li><input class="input-group" value="9" type="checkbox" name="toChange">Wiki</li>
+	  				<li><input class="input-group" value="10" type="checkbox" name="toChange">Foro</li>
+	  				<li><input class="input-group" value="11" type="checkbox" name="toChange">Cursos adicionales</li>
+				</ul>
+				<label class="labels" for="comment">Compártanos sus comentarios y/o sugerencias:</label>
+				<textarea class="txtArea col2" name="comment" id="" cols="30" rows="10" placeholder="Comentarios o sugerencias..."></textarea>
+				
+				<button id="submit" type="submit">Enviar</button>
+			</form>
+		</div>
+
+	</div>
+
+</body>
+</html>
