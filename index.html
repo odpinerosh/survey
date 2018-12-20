@@ -5,6 +5,7 @@
 	<title>FCC: Survey Form</title>
 </head>
 <body>
+	<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Muli:400,500');
 
@@ -86,7 +87,7 @@
 			justify-content: left;
 		}
 
-		@media screen and (min-width: 400px)
+		@media screen and (min-width: 400px) {
 			#formFrame {
 		 		width: 75%;
 		 	}
@@ -131,7 +132,7 @@
 	</style>
 
 	<header id="header">
-		<h1 id="tittle">Survey Form</h1>
+		<h1 id="title">Survey Form</h1>
 	</header>
 
 	<div id="formFrame">
@@ -142,7 +143,7 @@
 				<label class="labels" id="name-label" for="name">* Nombre: </label>
 				<input class="input-field col2" type="text" placeholder="Su nombre" id="name" required>
 				<label class="labels" id="email-label" for="mail">* Correo electrónico: </label>
-				<input class="input-field col2" type="email" placeholder="Su correo electrónico" id="mail" required>
+				<input class="input-field col2" type="email" placeholder="Su correo electrónico" id="email" required>
 				<label class="labels" id="number-label" for="number">* Edad: </label>
 				<input class="input-field col2" type="number" placeholder="Su edad" id="number" min="15" max="120" required>
 				<label class="labels" for="dropdown" id="lblCurRole">¿Cuál es su rol actual?</label>
